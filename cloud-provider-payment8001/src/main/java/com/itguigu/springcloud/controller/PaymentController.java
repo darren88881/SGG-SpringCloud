@@ -3,6 +3,7 @@ package com.itguigu.springcloud.controller;
 import com.itguigu.springcloud.entities.CommonResult;
 import com.itguigu.springcloud.entities.Payment;
 import com.itguigu.springcloud.service.PaymentService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +23,9 @@ public class PaymentController {
     @Resource
     private PaymentService paymentService;
 
+    @Value("${server.port}")
+    private String serverPort;
+
     @PostMapping("/payment/addPayment")
     public CommonResult<Payment> addPayment(@RequestBody Payment payment){
         int result = paymentService.addPayment(payment);
@@ -35,6 +39,6 @@ public class PaymentController {
     @GetMapping("/payment/getPaymentById/{id}")
     public CommonResult<Payment> getPaymentById(@PathVariable Long id){
         Payment payment = paymentService.getPaymentById(id);
-        return new CommonResult<Payment>(200,"select payment success", payment);
+        return new CommonResult<Payment>(200,"select payment success port:" + serverPort, payment);
     }
 }
