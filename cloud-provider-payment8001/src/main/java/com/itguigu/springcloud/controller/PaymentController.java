@@ -3,7 +3,10 @@ package com.itguigu.springcloud.controller;
 import com.itguigu.springcloud.entities.CommonResult;
 import com.itguigu.springcloud.entities.Payment;
 import com.itguigu.springcloud.service.PaymentService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  *
@@ -18,6 +22,7 @@ import javax.annotation.Resource;
  * @Date 2023/2/20 11:39
  */
 @RestController
+@Slf4j
 public class PaymentController {
 
     @Resource
@@ -25,6 +30,9 @@ public class PaymentController {
 
     @Value("${server.port}")
     private String serverPort;
+
+    @Resource
+    private DiscoveryClient discoveryClient;
 
     @PostMapping("/payment/addPayment")
     public CommonResult<Payment> addPayment(@RequestBody Payment payment){
@@ -40,5 +48,28 @@ public class PaymentController {
     public CommonResult<Payment> getPaymentById(@PathVariable Long id){
         Payment payment = paymentService.getPaymentById(id);
         return new CommonResult<Payment>(200,"select payment success port:" + serverPort, payment);
+    }
+
+    /**
+     * 服务发现Discovery
+     * @return
+     */
+    @GetMapping("/payment/discovery")
+    public Object getDiscovery() {
+        List<String> services = discoveryClient.getServices();
+        services.forEach( service ->{
+            log.info("service:"+service);
+        });
+
+        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PROVIDER-PAYMENT");
+        instances.forEach(instance ->{
+            log.info(
+                    instance.getServiceId()+" "+
+                    instance.getHost()+" "+
+                    instance.getPort()+" "+
+                    instance.getUri()
+            );
+        });
+        return this.discoveryClient;
     }
 }
