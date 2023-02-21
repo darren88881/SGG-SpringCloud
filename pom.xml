@@ -13,6 +13,7 @@
     <module>cloud-api-commons</module>
     <module>cloud-consumer-order80</module>
     <module>cloud-eureka-server7001</module>
+    <module>cloud-eureka-server7002</module>
   </modules>
 
   <name>Archetype - SGG-SpringCloud</name>
