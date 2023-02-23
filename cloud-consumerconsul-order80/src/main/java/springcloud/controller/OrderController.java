@@ -13,7 +13,7 @@ import javax.annotation.Resource;
  * @Date 2023/2/20 15:01
  */
 @RestController
-@RequestMapping("consumer")
+@RequestMapping("/consumer")
 public class OrderController {
 
     public static final String INVOKE_URL = "http://consul-provider-payment";
