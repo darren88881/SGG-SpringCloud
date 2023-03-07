@@ -1,0 +1,54 @@
+
+# 工具包
+cloud-api-commons
+
+# Eureka 注册中心集群
+cloud-eureka-server7001
+cloud-eureka-server7002
+
+# Eureka 注册中心单台
+cloud-eureka-server7003
+
+# Eureka 做注册中心 RestTemplate 做负载均衡 Ribbon 做负载均衡
+服务消费者：cloud-consumer-order80
+服务提供者：cloud-provider-payment8001
+服务提供者：cloud-provider-payment8002
+
+# Consul 做注册中心
+服务消费者：cloud-consumer-consul-order80
+服务提供者：cloud-provider-consul-payment8006
+
+# OpenFeign 做服务调用（负载均衡、超时控制、日志打印）
+服务消费者：cloud-consumer-feign-order80
+服务提供者：cloud-provider-payment8001(复用)
+服务提供者：cloud-provider-payment8002(复用)
+
+# HyStrix 断路器（降级、熔断、限流）监控
+服务消费者：cloud-consumer-feign-hystrix-order80
+服务提供者：cloud-provider-hystrix-payment8001
+服务监控  ：cloud-consumer-hystrix-dashboard9001
+
+# Gateway 网关（路由、断言、过滤）
+服务网关  ：cloud-gateway-gateway9527
+服务提供者：cloud-provider-payment8001(复用)
+
+# Config 配置中心 须手动刷新
+主配置节点：cloud-config-center-3344
+从配置节点：cloud-config-center-3355
+从配置节点：cloud-config-center-3366
+
+# Bus 消息总线 动态全局广播和定点通知
+主配置节点：cloud-config-center-3344(复用)
+从配置节点：cloud-config-center-3355(复用)
+从配置节点：cloud-config-center-3366(复用)
+
+# Stream 消息驱动  group 解决重复消费和持久化
+消息生产者：cloud-stream-rabbitmq-provider8801
+消息消费者：cloud-stream-rabbitmq-consumer8802
+消息消费者：cloud-stream-rabbitmq-consumer8803
+
+
+# Nacos 做注册中心
+服务消费者：cloudalibaba-nacos-consumer-order83
+服务提供者：cloudalibaba-nacos-provider-payment9001
+服务提供者：cloudalibaba-nacos-provider-payment9002
