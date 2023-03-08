@@ -11,8 +11,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class CloudConsumerConsulOrder80 {
+public class CloudConsulConsumerOrder30 {
     public static void main(String[] args) {
-        SpringApplication.run(CloudConsumerConsulOrder80.class, args);
+        SpringApplication.run(CloudConsulConsumerOrder30.class, args);
     }
 }

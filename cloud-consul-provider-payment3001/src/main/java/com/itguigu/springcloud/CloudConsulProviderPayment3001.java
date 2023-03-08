@@ -12,9 +12,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class CloudProviderConsulPayment8006 {
+public class CloudConsulProviderPayment3001 {
 
     public static void main(String[] args) {
-        SpringApplication.run(CloudProviderConsulPayment8006.class, args);
+        SpringApplication.run(CloudConsulProviderPayment3001.class, args);
     }
 }

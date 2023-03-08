@@ -1,10 +1,10 @@
 server:
-  port: 8006
+  port: 30
 
 
 spring:
   application:
-    name: consul-provider-payment
+    name: cloud-consul-consumer-order
   cloud:
     consul:
       host: localhost
