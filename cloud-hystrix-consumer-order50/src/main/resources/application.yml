@@ -1,0 +1,13 @@
+server:
+  port: 50
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka1003.com:1003/eureka
+
+# 开启降级、熔断、限流
+feign:
+  hystrix:
+    enabled: true
