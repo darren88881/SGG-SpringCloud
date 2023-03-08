@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @Date 2023/2/24 13:26
  */
 @Component
-@FeignClient(value = "CLOUD-PROVIDER-PAYMENT")
+@FeignClient(value = "CLOUD-EUREKA-PROVIDER-PAYMENT")
 public interface PaymentFeignService {
 
     @GetMapping("/payment/getPaymentById/{id}")

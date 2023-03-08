@@ -15,7 +15,7 @@ import javax.annotation.Resource;
  * @Date 2023/2/20 15:01
  */
 @RestController
-@RequestMapping("/consumer/feign/payment")
+@RequestMapping("/consumer/openfeign/payment")
 public class OrderController {
 
     @Resource

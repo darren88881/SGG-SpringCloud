@@ -1,11 +1,13 @@
 server:
-  port: 80
+  port: 40
 
 eureka:
   client:
     register-with-eureka: false # 不注册进eureka服务中心
     service-url:
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+      #defaultZone: http://eureka1001.com:1001/eureka/,http://eureka1002.com:1002/eureka/
+      # 单机版
+      defaultZone: http://eureka1003.com:1003/eureka/
 
 #设置feign客户端超时时间(OpenFeign默认支持ribbon)
 ribbon:
