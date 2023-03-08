@@ -1,0 +1,15 @@
+server:
+  port: 1002
+
+spring:
+  application:
+    name: cloud-eureka-service2
+
+eureka:
+  instance:
+    hostname: eureka1002.com
+  client:
+    fetch-registry: false  #不注册自己
+    register-with-eureka: false # 不检索自己
+    service-url:
+      defaultZone: http://eureka1001.com:1001/eureka/
