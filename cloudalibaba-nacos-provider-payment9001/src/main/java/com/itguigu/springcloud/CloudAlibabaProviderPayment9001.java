@@ -12,9 +12,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class CloudalibabaProviderPayment9002 {
+public class CloudAlibabaProviderPayment9001 {
 
     public static void main(String[] args) {
-        SpringApplication.run(CloudalibabaProviderPayment9002.class,args);
+        SpringApplication.run(CloudAlibabaProviderPayment9001.class,args);
     }
 }

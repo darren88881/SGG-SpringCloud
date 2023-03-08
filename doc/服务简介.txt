@@ -52,3 +52,4 @@ cloud-eureka-server1003
 服务消费者：cloudalibaba-nacos-consumer-order90
 服务提供者：cloudalibaba-nacos-provider-payment9001
 服务提供者：cloudalibaba-nacos-provider-payment9002
+配置中心  ：cloudalibaba-nacos-config-client9003
