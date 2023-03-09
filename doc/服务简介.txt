@@ -53,3 +53,6 @@ cloud-eureka-server1003
 服务提供者：cloudalibaba-nacos-provider-payment9001
 服务提供者：cloudalibaba-nacos-provider-payment9002
 配置中心  ：cloudalibaba-nacos-config-client9003
+
+# Sentinel
+微服务：cloudalibaba-sentinel-service1001
