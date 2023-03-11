@@ -21,6 +21,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @Date 2023/2/20 15:00
  */
 @SpringBootApplication
+@EnableFeignClients
 public class CloudConsumerFeignOrder40 {
     public static void main(String[] args) {
         SpringApplication.run(CloudConsumerFeignOrder40.class, args);
