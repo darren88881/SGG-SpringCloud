@@ -2,7 +2,7 @@
 1：Zookpeeper 服务注册和发现------------------------------
 2：consul 注册中心配置到Linux 中--------------------------完成
 3：安装zipkin 到Linux 演示SpringCloud Sleuth 链路追踪-----完成
-4：Sentinel @SentinelResource 的使用---------------------
+4：Sentinel @SentinelResource 的使用---------------------完成
 5：sentinel整合ribbon+openFeign+fallback-----------------
 6：sentinel持久化----------------------------------------
 7：Seata 安装和使用---------------------------------------
