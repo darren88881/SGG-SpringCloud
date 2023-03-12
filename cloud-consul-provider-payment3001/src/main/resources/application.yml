@@ -7,7 +7,9 @@ spring:
     name: cloud-consul-provider-payment
   cloud:
     consul:
-      host: localhost
+      host: 192.168.6.10
       port: 8500
       discovery:
         service-name: ${spring.application.name}
+        # 表示注册时使用IP而不是hostname
+        prefer-ip-address: true
