@@ -4,7 +4,12 @@ server:
 spring:
   application:
     name: cloud-eureka-consumer-order
-
+  zipkin:
+    base-url: http://192.168.6.10:9411
+  sleuth:
+    sampler:
+      # 采样率在0-1之间
+      probability: 1
 eureka:
   client:
     # 表示将自己注册进eureka

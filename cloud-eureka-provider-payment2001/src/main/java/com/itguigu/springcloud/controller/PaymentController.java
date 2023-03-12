@@ -90,4 +90,10 @@ public class PaymentController {
         return serverPort;
     }
 
+    @GetMapping("/zipkin")
+    public String paymentZipkin() {
+        return "I am cloud-eureka-provider-payment server port:"+serverPort;
+    }
+
+
 }
