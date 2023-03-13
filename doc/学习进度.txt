@@ -4,5 +4,5 @@
 3：安装zipkin 到Linux 演示SpringCloud Sleuth 链路追踪-----完成
 4：Sentinel @SentinelResource 的使用---------------------完成
 5：sentinel整合ribbon+openFeign+fallback-----------------完成
-6：sentinel持久化----------------------------------------
+6：sentinel持久化----------------------------------------完成
 7：Seata 安装和使用---------------------------------------
