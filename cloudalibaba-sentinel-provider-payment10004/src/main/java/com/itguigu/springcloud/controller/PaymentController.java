@@ -29,11 +29,12 @@ public class PaymentController {
 
     @GetMapping(value = "/paymentSQL/{id}")
     public CommonResult<Payment> paymentSQL(@PathVariable("id") Long id) {
-        Payment payment = hashMap.get(id);
-        CommonResult<Payment> result = new CommonResult(200, "from mysql,serverPort:  " + serverPort, payment);
-        return result;
+        if (id <= 3L) {
+            Payment payment = hashMap.get(id);
+            CommonResult<Payment> result = new CommonResult(200, "from mysql,serverPort:  " + serverPort, payment);
+            return result;
+        }
+        throw new RuntimeException("id 不得大于3");
     }
-    //CloudAlibabaProviderPayment9003Application
-    //CloudAlibabaSentinelProviderPayment10003
 
 }

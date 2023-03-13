@@ -1,5 +1,6 @@
 package com.itguigu.springcloud.controller;
 
+import cn.hutool.core.thread.ThreadUtil;
 import com.itguigu.springcloud.entities.CommonResult;
 import com.itguigu.springcloud.entities.Payment;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,10 +29,14 @@ public class PaymentController {
     }
 
     @GetMapping(value = "/paymentSQL/{id}")
-    public CommonResult<Payment> paymentSQL(@PathVariable("id") Long id) {
-        Payment payment = hashMap.get(id);
-        CommonResult<Payment> result = new CommonResult(200, "from mysql,serverPort:  " + serverPort, payment);
-        return result;
+    public CommonResult<Payment> paymentSQL(@PathVariable("id") Long id)
+            throws InterruptedException {
+        if (id <= 3L) {
+            Payment payment = hashMap.get(id);
+            CommonResult<Payment> result = new CommonResult(200, "from mysql,serverPort:  " + serverPort, payment);
+            return result;
+        }
+        throw new RuntimeException("id 不得大于3");
     }
 
 }

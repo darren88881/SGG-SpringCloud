@@ -54,5 +54,8 @@ cloud-eureka-server1003
 服务提供者：cloudalibaba-nacos-provider-payment9002
 配置中心  ：cloudalibaba-nacos-config-client9003
 
-# Sentinel 流控、降级、熔断
-微服务：cloudalibaba-sentinel-service10001
+# Sentinel 流控、降级
+微服务    ：cloudalibaba-sentinel-service10001
+服务消费者：cloudalibaba-sentinel-consumer-order10002
+服务提供者：cloudalibaba-sentinel-provider-payment10003
+服务提供者：cloudalibaba-sentinel-provider-payment10004

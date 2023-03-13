@@ -4,8 +4,10 @@ import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.itguigu.springcloud.entities.CommonResult;
 import com.itguigu.springcloud.entities.Payment;
+import com.itguigu.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,6 +30,12 @@ public class CircleBreakerController {
 
     @Resource
     private RestTemplate restTemplate;
+
+    /**
+     * OpenFeign：调用
+     */
+    @Resource
+    private PaymentService paymentService;
 
     /**
      * fallback    ：若本接口出现未知异常，则调用fallback指定的接口。
@@ -69,6 +77,17 @@ public class CircleBreakerController {
     public CommonResult blockHandler(@PathVariable("id") Long id, BlockException exception) {
         Payment payment = new Payment(id,"null");
         return new CommonResult(445,"限流降级兜底,exception内容"+exception.getMessage(),payment);
+    }
+
+
+    /**
+     * OpenFeign :进行调用-实现服务降级处理
+     * @param id
+     * @return
+     */
+    @GetMapping(value = "/openfeign/paymentSQL/{id}")
+    public CommonResult<Payment> paymentSQL(@PathVariable("id") Long id) {
+        return paymentService.paymentSQL(id);
     }
 
 }

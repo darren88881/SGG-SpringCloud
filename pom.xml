@@ -44,6 +44,9 @@
     <module>cloudalibaba-nacos-config-client9003</module>
 
     <module>cloudalibaba-sentinel-service10001</module>
+      <module>cloudalibaba-sentinel-consumer-order10002</module>
+    <module>cloudalibaba-sentinel-provider-payment10003</module>
+      <module>cloudalibaba-sentinel-provider-payment10004</module>
   </modules>
 
   <name>Archetype - SGG-SpringCloud</name>
