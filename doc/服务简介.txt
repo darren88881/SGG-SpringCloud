@@ -59,3 +59,8 @@ cloud-eureka-server1003
 服务消费者：cloudalibaba-sentinel-consumer-order10002
 服务提供者：cloudalibaba-sentinel-provider-payment10003
 服务提供者：cloudalibaba-sentinel-provider-payment10004
+
+# Seata 分布式事物
+订单服务：cloudalibaba-seata-order-service-11001
+库存服务: cloudalibaba-seata-storage-service-11002
+账户服务：cloudalibaba-seata-account-service-11003
