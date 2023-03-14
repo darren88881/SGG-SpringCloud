@@ -38,20 +38,19 @@
     <module>cloud-stream-rabbitmq-consumer8002</module>
     <module>cloud-stream-rabbitmq-consumer8003</module>
 
+    <module>cloudalibaba-nacos-consumer-order90</module>
     <module>cloudalibaba-nacos-provider-payment9001</module>
     <module>cloudalibaba-nacos-provider-payment9002</module>
-    <module>cloudalibaba-nacos-consumer-order90</module>
     <module>cloudalibaba-nacos-config-client9003</module>
 
     <module>cloudalibaba-sentinel-service10001</module>
+    <module>cloudalibaba-sentinel-consumer-order10002</module>
+    <module>cloudalibaba-sentinel-provider-payment10003</module>
+    <module>cloudalibaba-sentinel-provider-payment10004</module>
 
     <module>cloudalibaba-seata-order-service-11001</module>
     <module>cloudalibaba-seata-storage-service-11002</module>
     <module>cloudalibaba-seata-account-service-11003</module>
-
-    <module>cloudalibaba-sentinel-consumer-order10002</module>
-    <module>cloudalibaba-sentinel-provider-payment10003</module>
-    <module>cloudalibaba-sentinel-provider-payment10004</module>
   </modules>
 
   <name>Archetype - SGG-SpringCloud</name>
