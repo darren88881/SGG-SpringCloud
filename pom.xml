@@ -11,28 +11,28 @@
   <modules>
     <module>cloud-api-commons</module>
 
-    <module>cloud-config-center-7001</module>
-    <module>cloud-config-client-7002</module>
-    <module>cloud-config-client-7003</module>
-
-    <module>cloud-consul-consumer-order30</module>
-    <module>cloud-consul-provider-payment3001</module>
+    <module>cloud-eureka-server1001</module>
+    <module>cloud-eureka-server1002</module>
+    <module>cloud-eureka-server1003</module>
 
     <module>cloud-eureka-consumer-order20</module>
     <module>cloud-eureka-provider-payment2002</module>
     <module>cloud-eureka-provider-payment2001</module>
 
-    <module>cloud-eureka-server1001</module>
-    <module>cloud-eureka-server1002</module>
-    <module>cloud-eureka-server1003</module>
+    <module>cloud-consul-consumer-order30</module>
+    <module>cloud-consul-provider-payment3001</module>
 
     <module>cloud-openfeign-consumer-order40</module>
-
-    <module>cloud-gateway-gateway6001</module>
 
     <module>cloud-hystrix-consumer-order50</module>
     <module>cloud-hystrix-provider-payment5001</module>
     <module>cloud-hystrix-dashboard5002</module>
+
+    <module>cloud-gateway-gateway6001</module>
+
+    <module>cloud-config-center-7001</module>
+    <module>cloud-config-client-7002</module>
+    <module>cloud-config-client-7003</module>
 
     <module>cloud-stream-rabbitmq-provider8001</module>
     <module>cloud-stream-rabbitmq-consumer8002</module>
