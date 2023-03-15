@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.atguigu.springcloud.alibaba.dao.OrderDao">
+<mapper namespace="com.itguigu.springcloud.dao.OrderDao">
 
-    <resultMap id="order" type="com.itguigu.springcloud.springcloud.alibaba.domain.Order">
+    <resultMap id="order" type="com.itguigu.springcloud.domain.Order">
         <result property="id" column="id" jdbcType="BIGINT"/>
         <result property="user_id" column="userId" jdbcType="BIGINT"/>
         <result property="product_id" column="productId" jdbcType="BIGINT"/>
-        <result property="count" column="count" jdbcType="INTEGER"/>
+        <result property="count_num" column="countNum" jdbcType="INTEGER"/>
         <result property="money" column="money" jdbcType="BIGINT"/>
         <result property="status" column="status" jdbcType="INTEGER"/>
     </resultMap>
 
 
     <insert id="create">
-        insert into t_order(user_id, product_id, count, money, status)
-            value (#{userId},#{productId},#{count},#{money},0)
+        insert into t_order (user_id, product_id, count_num, money, status)
+            value (#{userId},#{productId},#{countNum},#{money},0)
     </insert>
 
     <update id="update">

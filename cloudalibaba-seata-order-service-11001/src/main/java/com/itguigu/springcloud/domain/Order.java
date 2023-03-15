@@ -20,7 +20,7 @@ public class Order {
 
     private Long productId;
 
-    private Integer count;
+    private Integer countNum;
 
     private BigDecimal money;
 

@@ -31,7 +31,8 @@ public class OrderServiceImpl implements OrderService {
      * 创建订单->调用库存服务扣减库存->调用账户服务扣减账户余额->修改订单状态
      * 简单说：下订单->扣库存->减余额->改状态
      * 注释掉 @GlobalTransactional 的时候，需要注意下方这个方法里面手动模拟了延时，也需要注释掉
-     * com.atguigu.springcloud.alibaba.service.impl.AccountServiceImpl#decrease(java.lang.Long, java.math.BigDecimal)
+     * com.itguigu.springcloud.service.impl.AccountServiceImpl#decrease(java.lang.Long,
+     * java.math.BigDecimal)
      */
     @Override
     @GlobalTransactional(name = "fsp-create-order", rollbackFor = Exception.class)
@@ -42,7 +43,7 @@ public class OrderServiceImpl implements OrderService {
 
         //2 扣减库存
         log.info("----->订单微服务开始调用库存，做扣减Count");
-        storageService.decrease(order.getProductId(), order.getCount());
+        storageService.decrease(order.getProductId(), order.getCountNum());
         log.info("----->订单微服务开始调用库存，做扣减end");
 
         //3 扣减账户

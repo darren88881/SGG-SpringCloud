@@ -6,8 +6,8 @@ spring:
     name: seata-order-service
   cloud:
     alibaba:
+      # 自定义事务组名称需要与seata-server中的对应
       seata:
-        # 自定义事务组名称需要与seata-server中的对应
         tx-service-group: springcloud_tx_group
     nacos:
       discovery:
