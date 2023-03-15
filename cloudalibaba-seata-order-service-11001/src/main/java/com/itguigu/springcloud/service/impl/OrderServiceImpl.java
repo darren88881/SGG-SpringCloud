@@ -37,11 +37,13 @@ public class OrderServiceImpl implements OrderService {
     @Override
     @GlobalTransactional(name = "fsp-create-order", rollbackFor = Exception.class)
     public void create(Order order) {
+
+        System.out.println(order.toString());
+
         log.info("----->开始新建订单");
         //1 新建订单
-        orderDao.create(order);
-
-        //2 扣减库存
+         orderDao.create(order);
+      //2 扣减库存
         log.info("----->订单微服务开始调用库存，做扣减Count");
         storageService.decrease(order.getProductId(), order.getCountNum());
         log.info("----->订单微服务开始调用库存，做扣减end");
@@ -57,6 +59,11 @@ public class OrderServiceImpl implements OrderService {
         log.info("----->修改订单状态结束");
 
         log.info("----->下订单结束了，O(∩_∩)O哈哈~");
+    }
 
+    public Order selectById(Long id){
+        System.out.println("id="+id);
+        Order order = orderDao.selectById(id);
+        return order;
     }
 }

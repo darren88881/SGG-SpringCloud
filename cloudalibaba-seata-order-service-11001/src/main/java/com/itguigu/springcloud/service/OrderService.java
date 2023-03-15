@@ -9,4 +9,6 @@ import com.itguigu.springcloud.domain.Order;
  */
 public interface OrderService {
     void create(Order order);
+
+    Order selectById(Long id);
 }

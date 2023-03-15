@@ -24,4 +24,10 @@ public class OrderController {
         orderService.create(order);
         return new CommonResult(200, "订单创建成功");
     }
+
+    @GetMapping("/order/selectById")
+    public CommonResult selectById(Long id) {
+        Order order = orderService.selectById(id);
+        return new CommonResult(200, "查询订单成功", order);
+    }
 }

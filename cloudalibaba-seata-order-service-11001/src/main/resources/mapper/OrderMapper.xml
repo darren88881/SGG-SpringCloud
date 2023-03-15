@@ -8,19 +8,21 @@
         <result property="product_id" column="productId" jdbcType="BIGINT"/>
         <result property="count_num" column="countNum" jdbcType="INTEGER"/>
         <result property="money" column="money" jdbcType="BIGINT"/>
-        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="status_num" column="statusNum" jdbcType="INTEGER"/>
     </resultMap>
 
 
     <insert id="create">
-        insert into t_order (user_id, product_id, count_num, money, status)
+        insert into t_order (user_id, product_id, count_num, money, status_num)
             value (#{userId},#{productId},#{countNum},#{money},0)
     </insert>
 
     <update id="update">
-        update t_order
-        set status = 1
-        where user_id = #{userId}
-          and status = #{status}
+        update t_order set status_num = 1
+        where user_id = #{userId} and status_num = #{statusNum}
     </update>
+
+    <select id="selectById" parameterType="java.lang.Long" resultMap="order">
+        select * from t_order where id = #{id};
+    </select>
 </mapper>

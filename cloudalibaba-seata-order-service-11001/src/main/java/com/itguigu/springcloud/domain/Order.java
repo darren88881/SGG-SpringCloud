@@ -16,6 +16,8 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class Order {
 
+    private Long id;
+
     private Long userId;
 
     private Long productId;
@@ -24,5 +26,5 @@ public class Order {
 
     private BigDecimal money;
 
-    private Integer status; //订单状态：0：创建中；1：已完结
+    private Integer statusNum; //订单状态：0：创建中；1：已完结
 }
